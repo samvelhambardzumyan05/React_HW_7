@@ -1,0 +1,146 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.difficulty-selector {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.difficulty-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ecf0f1;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.difficulty-btn.active {
+  background-color: #3498db;
+  color: white;
+}
+
+.difficulty-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.difficulty-btn:not(:disabled):hover {
+  background-color: #bdc3c7;
+}
+
+.difficulty-btn.active:not(:disabled):hover {
+  background-color: #2980b9;
+}
+
+
+.game-board {
+  display: grid;
+  gap: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+
+.card {
+  aspect-ratio: 1;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card.matched .card-back {
+  opacity: 0.7;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.card-front {
+  background-color: #3498db;
+}
+
+.card-back {
+  background-color: #ecf0f1;
+  transform: rotateY(180deg);
+}
+
+
+.start-button, .play-again-button {
+  padding: 10px 20px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 10px 0;
+  transition: background-color 0.3s;
+}
+
+.start-button:hover, .play-again-button:hover {
+  background-color: #27ae60;
+}
+
+
+.game-stats {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.game-stats h2 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.game-stats p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
